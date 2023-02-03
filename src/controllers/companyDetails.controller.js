@@ -7,6 +7,19 @@ const postDetails = async (req, res) => {
   res.status(200).json(csvJsonData);
 }
 
+const getSectors = async (req, res) => 
+{
+  const sectorData = service.addSectorData();
+  res.status(200).json(sectorData);
+}
+
+
+const getAllScores = async (req, res) => {
+  const allScores = await service.getAllScores();
+  res.status(200).json(allScores);
+};
 module.exports = {
-  postDetails
+  postDetails,
+  getSectors,
+  getAllScores
 }
